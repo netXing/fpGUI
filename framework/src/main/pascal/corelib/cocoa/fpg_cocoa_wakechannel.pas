@@ -24,6 +24,7 @@
 unit fpg_cocoa_wakechannel;
 
 {$mode objfpc}{$H+}
+{$modeswitch objectivec1}{and this line following}
 
 interface
 
