@@ -105,8 +105,8 @@ type
     FImageWidth: Integer;
     FImageHeight: Integer;
     procedure drawRect(dirtyRect: NSRect); override;
-    function  acceptsFirstResponder: Boolean; override;
-    function  isFlipped: Boolean; override;
+    function  acceptsFirstResponder: Boolean8; override;{Boolean->Boolean8}
+    function  isFlipped: Boolean8; override;{Boolean->Boolean8}
     procedure setWindow(AWindow: TfpgCocoaWindow); message 'setWindow:';
     procedure setImageBuffer(AData: Pointer; AWidth, AHeight: Integer); message 'setImageBuffer:width:height:';
 
@@ -502,12 +502,12 @@ begin
   CGColorSpaceRelease(colorSpace);
 end;
 
-function TfpgCocoaView.acceptsFirstResponder: Boolean;
+function TfpgCocoaView.acceptsFirstResponder: Boolean8;
 begin
   Result := True;  // Allow view to receive keyboard events
 end;
 
-function TfpgCocoaView.isFlipped: Boolean;
+function TfpgCocoaView.isFlipped: Boolean8;
 begin
   Result := True;  // Use top-left origin like fpGUI expects
 end;
